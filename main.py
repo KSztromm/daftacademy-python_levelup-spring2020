@@ -24,6 +24,10 @@ class Patient(BaseModel):
 def hello_world():
     return {"message": "Hello World during the coronavirus pandemic!"}
 
+@app.get('/welcome')
+def hello_known():
+	return {"message": "Hello, my patient!"}
+
 @app.get('/hello/{name}', response_model=HelloNameResp)
 def hello_name(name: str):
     return HelloNameResp(message=f"hello {name}")
